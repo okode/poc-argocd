@@ -6,17 +6,34 @@ Install kubernetes. For the local cluster we can use [Minikube](https://minikube
 
 #### Creating ArgoCD
 
-- Create the `minikube` cluster. (It can take some time).
 ```bash
 minikube start
 ```
-
 ```bash
 kubectl create namespace argocd
 ```
-
 ```bash
-
+kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 ```
 
+#### Setting up Helm
+```bash
+curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
+```
+```bash
+helm repo add stable https://charts.helm.sh/stable
+```
+```bash
+helm repo update
+```
+
+#### Build the application
+```bash
+docker build -t rferrandop/app-poc:latest .
+```
+
+#### Push the image
+```bash
+docker push rferrandop/app-poc:latest
+```
 

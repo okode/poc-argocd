@@ -16,7 +16,7 @@ spec:
         spec:
             containers:
                 - name: app
-                  image: app-argocd-test:{{ .Values.env.APP_VERSION }}
+                  image: rferrandop/app-argocd-test:{{ .Values.env.APP_VERSION }}
                   ports:
                     - containerPort: 3000
                   readinessProbe:

@@ -6,6 +6,7 @@ Install kubernetes. For the local cluster we can use [Minikube](https://minikube
 
 #### Creating ArgoCD
 
+
 ```bash
 minikube start
 ```
